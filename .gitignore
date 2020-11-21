@@ -1,21 +1,21 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/frontend/dist
-/frontend/tmp
-/frontend/out-tsc
+/dist
+/tmp
+/out-tsc
 # Only exists if Bazel was run
-/frontend/bazel-out
+/bazel-out
 
 # dependencies
-/frontend/node_modules
+/node_modules
 
 # profiling files
 chrome-profiler-events*.json
 speed-measure-plugin*.json
 
 # IDEs and editors
-/frontend/.idea
+/.idea
 .project
 .classpath
 .c9/
@@ -32,15 +32,15 @@ speed-measure-plugin*.json
 .history/*
 
 # misc
-/frontend/.sass-cache
-/frontend/connect.lock
-/frontend/coverage
-/frontend/libpeerconnection.log
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
 npm-debug.log
 yarn-error.log
 testem.log
 note.txt
-/frontend/typings
+/typings
 
 # System Files
 .DS_Store
