@@ -1,0 +1,134 @@
+// style and change variable values
+// @import url('https://font.googleapis.com/css?family=Lato:400,700|Nunito:400,700');
+
+$turquoise: #44ddd0;
+$green: #27d7a1;
+$light-green: #45f69e;
+$red: #FF0000;
+$light-red: #F08080;
+$palevioletred: #DB7093;
+$light: #f8f8f8;
+$green: rgb(0,100,80);
+
+// update Bulma's global variables
+$family-sans-serif: "Nunito", "sans-serif";
+// $primary: $green;
+// $link: $light-green;
+$primary: $red;
+$link: $light-red;
+// Update some Bulma's component variables
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+// Set custom global styles
+
+html {
+//  background: linear-gradient(to right top, $turquoise, $green);
+  background: linear-gradient(to right top, $palevioletred, $red);
+}
+
+html, body {
+  height: 100%;
+}
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 82%;
+}
+
+.full-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.title {
+  font-family: "Lato";
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.white-box {
+  padding: 35px;
+  background: white;
+  max-width: 1000px;
+  max-height: 600px;
+  border-radius: 5px;
+}
+
+.history-view-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 82%;
+  max-width: 1000px;
+//  max-height: 680px;
+  padding: 42px;
+  background: white;
+  border-radius: 8px;
+}
+
+.simulators-view-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 82%;
+  max-width: 1000px;
+  min-height: 800px;
+  padding: 42px;
+  background: white;
+  border-radius: 8px;
+}
+
+
+.table-container {
+  display: flex;
+  flex-grow: 1;
+  padding: 42px;
+  width: 100%;
+  height: 100%;
+
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+}
+
+.content-footer {
+  width: 100%;
+  height: 20;
+  padding: 2px;
+  background: white;
+}
+
+.loaded-file {
+  background: white;
+
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:over {
+    box-shadow: 0 0 0 5px #eeeeee;
+  }
+}
+
+.modal-box {
+  width: 95%;
+  height: 100%;
+  background: white;
+  border-radius: 15px;
+  padding: 35px;
+}
+
+input[type=number]{
+  width: 80px;
+}

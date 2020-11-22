@@ -1,0 +1,60 @@
+<div class="centered-content">
+  <div class="white-box">
+    <div class="field">
+      <div>
+        <img src="./assets/img/users.png" id="icon" alt="User Icon" />
+      </div>
+    </div>
+    <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+      <div class="field">
+        <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Full Name"
+        required class="input has-background-light" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullName.valid }">
+        <div *ngIf="signUpForm.submitted && !fullName.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+          required [pattern]="emailRegex" class="input has-background-light" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </p>
+        <div *ngIf="signUpForm.submitted && email.errors">
+          <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+          <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+        </div>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
+          minlength="4" required class="input has-background-light" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+        <div *ngIf="signUpForm.submitted && password.errors">
+          <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
+          <label *ngIf="password.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>
+        </div>
+      </div>
+      <div class="field">
+        <input class="button is-success has-text-white" type="submit" value="Sign Up">
+      </div>
+    </form>
+    <!-- Success message -->
+    <div class="success" *ngIf="showSucessMessage">
+      Saved successfully
+    </div>
+    
+    <!-- Error message -->
+    <div class="alert" *ngIf="serverErrorMessages">
+      {{serverErrorMessages}}
+    </div>
+  </div>
+</div>
+  

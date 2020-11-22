@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start:client" :"cd ../AngFrontEnd && ng serve --open",
+    "start:client" :"cd ../frontend && ng serve --open",
     "start:server" :"nodemon server.js",
     "dev":"concurrently -k --kill-others-on-fail \"yarn run start:client\" \"yarn run start:server\" "
   },

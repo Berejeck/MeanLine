@@ -1,0 +1,34 @@
+<div class="centered-content">
+
+      <div class="white-box">
+          <div class="field">
+            <div>
+              <img src="./assets/img/single_user.png" id="icon" alt="User Icon" />
+            </div>
+          </div>
+          <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+            <div class="field">
+              <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="Email" [pattern]="emailRegex" required
+              class="input has-background-light" [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid }">
+              <div *ngIf="signInForm.submitted && email.errors?.pattern">
+                <label class="validation-message">Invalid email address.</label>
+              </div>
+            </div>
+            <div class="field">
+              <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Password" required minlength="4"
+              class="input has-background-light" [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }">
+              <div *ngIf="signInForm.submitted && password.errors?.minlength">
+                <label class="validation-message">Minimum 4 characters.</label>
+              </div>
+            </div>
+            <div class="field">
+              <input class="button is-success has-text-white" type="submit" value="Sign In">
+            </div>
+          </form>
+          <!-- Error message -->
+          <div class="alert" *ngIf="serverErrorMessages">
+            {{serverErrorMessages}}
+          </div>
+      </div>
+  </div>
+
