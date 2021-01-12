@@ -15,14 +15,18 @@ export class SignUpComponent implements OnInit {
   showSucessMessage: boolean;
   serverErrorMessages: string;
 
-  constructor(public userService: UserService, private router: Router) { }
+  constructor(public userService: UserService, private router: Router) {
+    this.showSucessMessage = false;
+    this.serverErrorMessages = '';
+  }
 
   ngOnInit(): void {
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
+
     this.userService.postUser(form.value).subscribe(
-      ( res: HttpResponse<any>) => {
+      (res: any) => {
         this.showSucessMessage = true;
         setTimeout(() => this.showSucessMessage = false, 4000);
         this.resetForm(form);
@@ -37,9 +41,10 @@ export class SignUpComponent implements OnInit {
         }
       }
     );
+  // */
   }
 
-  resetForm(form: NgForm) {
+  resetForm(form: NgForm): void {
     this.userService.selectedUser = {
       fullName: '',
       email: this.userService.selectedUser.email,

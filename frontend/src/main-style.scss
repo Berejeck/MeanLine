@@ -1,6 +1,30 @@
 // style and change variable values
 // @import url('https://font.googleapis.com/css?family=Lato:400,700|Nunito:400,700');
 
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+
+// Update some of Bulma's component variables
+$control-border-width: 2px;
+$input-background-color: $beige-lighter;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Set custom global styles
 $turquoise: #44ddd0;
 $green: #27d7a1;
 $light-green: #45f69e;
@@ -10,21 +34,9 @@ $palevioletred: #DB7093;
 $light: #f8f8f8;
 $green: rgb(0,100,80);
 
-// update Bulma's global variables
-$family-sans-serif: "Nunito", "sans-serif";
-// $primary: $green;
-// $link: $light-green;
-$primary: $red;
-$link: $light-red;
-// Update some Bulma's component variables
-$control-border-width: 2px;
-$input-border-color: transparent;
-$input-shadow: none;
-// Set custom global styles
-
 html {
 //  background: linear-gradient(to right top, $turquoise, $green);
-  background: linear-gradient(to right top, $palevioletred, $red);
+  background: linear-gradient(to right top, $beige-lighter, $beige-light);
 }
 
 html, body {

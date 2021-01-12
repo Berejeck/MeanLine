@@ -11,8 +11,11 @@ import { UserService } from '../../../services/user/user.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
+  serverErrorMessages: string;
 
-  constructor(private userService: UserService, private router: Router, private dataSharingService: DataSharingService) { }
+  constructor(private userService: UserService, private router: Router, private dataSharingService: DataSharingService) {
+    this.serverErrorMessages = '';
+  }
 
   model = {
     email : '',
@@ -20,15 +23,14 @@ export class SignInComponent implements OnInit {
   };
   // tslint:disable-next-line:max-line-length
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  serverErrorMessages: string;
-  ngOnInit() {
+  ngOnInit(): void {
     console.log('Oninit -< signin', this.userService);
     if ( this.userService.isLoggedIn() ) {
-      this.router.navigateByUrl('/boxview');
+      this.router.navigateByUrl('/');
     }
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
     this.userService.login(form.value).subscribe(
       ( res: any) => {
         console.log(res);
@@ -36,7 +38,7 @@ export class SignInComponent implements OnInit {
         this.userService.setFullName(res.fullName, res.email);
         this.dataSharingService.isUserLoggedIn.next(true);
         this.dataSharingService.userFullName.next(res.fullName);
-        this.router.navigateByUrl('/boxview');
+        this.router.navigateByUrl('/');
       },
       ( err: { error: { message: string; }; }) => {
         console.log('login ', err);

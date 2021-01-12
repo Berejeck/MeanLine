@@ -2,37 +2,30 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" routerLink="/">
-        <img src="assets/img/ttt-banner.png" width="112" height="28">
+        <img src="assets/img/baseline.png" width="50" height="28">
       </a>
-  
+
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-  
+
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" routerLink="/">
           Home
         </a>
-  
+
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             Documentation
           </a>
-  
+
           <div class="navbar-dropdown">
             <a class="navbar-item" href="https://toolbox.sia.eu/confluence/display/AT/Monetica+Team" target="_blank">
               SLM Test Team
-            </a>
-            <a class="navbar-item" routerLink="/boxvideo">
-              Video lessons
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item" href="http://svtestdb00/ex/pwc/index.html" target="_blank">
-              PWC
             </a>
           </div>
         </div>
@@ -41,22 +34,12 @@
           <a class="navbar-link">
             Authorizations
           </a>
-  
+
           <div class="navbar-dropdown">
-            <a class="navbar-item" routerLink="/simulators">
+            <a class="navbar-item" routerLink="/">
               Simulators
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item" href="https://toolbox.sia.eu/confluence/display/AT/calendar/e8c61d85-440f-4c6c-a6ad-4f6936b3f0fb?calendarName=SLM-TES-Simulators" target="_blank">
-              Calendario Jolly
-            </a>
-            <a class="navbar-item" href="https://shared.sia.local/sites/S00038/Shared%20Documents/Test%20Documentation/TES%20-%20Authorizations/Simulatori/Simulatori/Simulatori%20Mastercard%20e%20Visa%20-%20lista%20licenze.xlsx?Web=1" target="_blank">
-              Licenze e versioni
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item" href="https://corporate.sia.eu/jira/projects/TSTOFF/issues/" target="_blank">
-              Report an issue
-            </a>
           </div>
         </div>
 
@@ -64,32 +47,19 @@
           <a class="navbar-link">
             Interfaces
           </a>
-  
+
           <div class="navbar-dropdown">
-            <a class="navbar-item" routerLink="/interfaces/historyview">
+            <a class="navbar-item" routerLink="/">
               History View & Upload
-            </a>
-            <a class="navbar-item" routerLink="/interfaces/new-dataset">
-              New Interface
-            </a>
-            <a class="navbar-item" (click)="searchDataset()">
-              Search Existing Interface
-            </a>
-            <a class="navbar-item" routerLink="/interfaces/tagtable-decode">
-              Tag and Table decode
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item" href="https://corporate.sia.eu/jira/projects/TSTOFF/issues/" target="_blank">
-              Report an issue
             </a>
           </div>
         </div>
-      
+
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             More
           </a>
-  
+
           <div class="navbar-dropdown">
             <a class="navbar-item" routerLink="/about">
               About
@@ -98,14 +68,9 @@
               Contact
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item" href="https://corporate.sia.eu/jira/projects/TSTOFF/issues/" target="_blank">
-              Report an issue
-            </a>
           </div>
         </div>
       </div>
-      
-  
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons" *ngIf="!isUserLoggedIn">
@@ -126,6 +91,6 @@
           </div>
         </div>
       </div>
-  
+
     </div>
 </nav>

@@ -2,8 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import session from 'express-session';
 const router = express.Router();
-import FileStore from 'session-file-store';
-const fileStore = FileStore.session;
+// import FileStore from 'session-file-store';
+// const fileStore = FileStore.session;
 const app = express()
 const port = 5100
 

@@ -1,13 +1,8 @@
 // This file will handle connection logic to MongoDB
 import mongoose from 'mongoose';
-import multer  from 'multer';
-import GridFsStorage from 'multer-gridfs-storage';
-import Grid from 'gridfs-stream';
 
 Promise = global.Promise;
-const db = 'mongodb://localhost/checkInterface';
-// const db = process.env.MONGODB_URI;
-// console.log('db', db);
+const db = 'mongodb://localhost/baseline';
 
 mongoose.connect(db,  {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log("Connected to MongoDB succesfully :))) ");
